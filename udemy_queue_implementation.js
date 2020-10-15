@@ -17,7 +17,7 @@ class Queue {
     this.size = 0;
   }
 
-  push(value) {
+  enqueue(value) {
     let node = new Node(value);
     if(this.size === 0) {
       this.first = node;
@@ -30,7 +30,7 @@ class Queue {
     return this;
   }
 
-  pop() {
+  dequeue() {
     let temp = this.first;
     if(this.size === 0) {
       return false;
