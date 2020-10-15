@@ -16,4 +16,29 @@ class Queue {
     this.last = null;
     this.size = 0;
   }
+
+  push(value) {
+    let node = new Node(value);
+    if(this.size === 0) {
+      this.first = node;
+      this.last = node;
+    } else {
+      this.last.next = node;
+      this.last = node;
+    }
+    this.size++;
+    return this;
+  }
+
+  pop() {
+    let temp = this.first;
+    if(this.size === 0) {
+      return false;
+    } else {
+      this.first = this.first.next;
+      temp.next = null;
+    }
+    this.size--;
+    return temp;
+  }
 }
